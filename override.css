@@ -1,0 +1,368 @@
+/* $background1, color, Body Background */
+/* $color1, color, Text Color */
+/* $color2, color, Heading Color */
+/* $color3, color, Heading Alt Color */
+/* $link1, color, Link Color */
+/* $link2, color, Link Alt Color */
+/* $link3, color, Link Alt2 Color */
+/* $subnav1, color, Subnav Background */
+/* Background 1 - Header Image
+================================================== */
+body,
+nav.mobile,
+.csstransforms #billboard.hasimg:before,
+.csstransforms #billboard.hasvideo:before,
+.csstransforms #billboard.hasrotator:before,
+.csstransforms #billboard.hasimg:after,
+.csstransforms #billboard.hasvideo:after,
+.csstransforms #billboard.hasrotator:after,
+#sidebar .widget.events article a:hover,
+.csstransforms #sidebar .widget.posts .image:before,
+.csstransforms #sidebar .widget.posts .image:after,
+.widget.icon-buttons a:hover,
+#event-control-bar,
+.csstransforms .widget.section-posts .image:before,
+.csstransforms .widget.section-posts .image:after,
+.widget.section-events article a:hover {
+  /* $background1 */
+  background-color: #f2f0e6;
+}
+
+#header.stuck {
+  /* $background1 */
+  background-color: rgba(242, 240, 230, 1);
+}
+
+.monkForm fieldset > legend,
+.monkForm input[type=submit],
+.monkForm input[type=submit]:hover,
+#pagination #current,
+a.button-medium,
+p.button-medium a,
+a.button-medium:hover,
+p.button-medium a:hover,
+a.button-large,
+p.button-large a,
+a.button-large:hover,
+p.button-large a:hover,
+.widget.icon-buttons a,
+.ui-selectmenu-button span.ui-selectmenu-text,
+.ui-selectmenu-button span.icon-chevron-down,
+.ui-selectmenu-menu .ui-menu li,
+.calendar th,
+.calendar td > a:hover,
+.list-time-month {
+  /* $background1 */
+  color: #f2f0e6;
+}
+
+.widget.section-events article a {
+  /* $background1 */
+  border-color: #f2f0e6;
+}
+
+/* Color 1 - Text Color
+================================================== */
+body,
+table caption,
+table th,
+table td,
+textarea,
+.monkForm div input,
+.monkForm div textarea,
+.monkForm div select,
+#searchForm #search_term,
+#searchForm2 #search_term2,
+#content #event-nav li a:hover,
+#content #event-nav li.active a,
+#ekkSermons_5_detail .sermon-top h2,
+.comments form textarea,
+#module-search-term,
+#zip-search-term {
+  /* $color1 */
+  color: #594946;
+}
+
+.ui-selectmenu-button,
+.ui-selectmenu-menu .ui-menu,
+.calendar th,
+.calendar td > a:hover,
+p.list-time-month {
+  /* $color1 */
+  background-color: #594946;
+}
+
+p.list-time-day,
+p.list-time-month,
+.calendar td {
+  /* $color1 */
+  border-color: #594946;
+}
+
+/* Color 2 - Heading Color
+================================================== */
+h1,
+h2,
+h3,
+a:hover,
+.rsvp a:hover,
+a.button-small:hover,
+p.button-small a:hover,
+.monkForm fieldset fieldset > legend,
+.monkForm div.divider .heading,
+#header .top-links li > a:hover,
+#searchForm #search_go:hover,
+#mobilenav > li > a,
+#mobilenav .meganav-inner section.links > ul > li.active > a,
+#nav > li > a,
+nav.sidebar h6.home a:hover,
+#content #subnav > li > ul > li > a:hover,
+#content #subnav > li > ul > li.current > a,
+#content #subnav > li > ul > li > ul > li > a:hover,
+#content #subnav > li > ul > li > ul > li.current > a,
+#content #subnav > li > ul > li > ul li a:hover,
+#content #subnav > li > ul > li > ul li.current > a,
+#sidebar .widget.events article a:hover h5,
+#footer .social-links li a:hover,
+.widget.section-events article a:hover h5,
+#module-search-submit,
+#zip-search-submit {
+  /* $color2 */
+  color: #675856;
+}
+
+.monkForm fieldset > legend,
+.monkForm fieldset > legend:before,
+.monkForm fieldset > legend:after {
+  /* $color2 */
+  background-color: #675856;
+}
+
+/* Color 3 - Heading Alt Color
+================================================== */
+h4,
+h5,
+h6,
+blockquote,
+hr,
+.monkForm .section p,
+.monkForm .heading,
+.monkForm p.description,
+.monkForm div.divider div.description p,
+nav.mobile .top-links li a,
+#mobilenav .meganav-inner section.links > ul > li > a,
+#mobilenav .meganav-inner section.links ul ul li a,
+#mobilenav li.dropdown > a span i,
+#search_go2,
+#mobile-toggle i,
+#header .top-links li > a,
+#searchForm #search_go,
+nav.sidebar h6.home a,
+#content #subnav > li > a,
+#content #subnav > li > ul > li > a,
+#content #subnav > li > ul > li > ul > li > a,
+#content #subnav > li > ul > li > ul li a,
+#footer .social-links li a,
+#footer .copyright,
+#footer .copyright a,
+#sidebar .widget.events article a:after,
+#welcome-scroll,
+.widget.section-events article a:after,
+#module-search-submit,
+#zip-search-submit {
+  /* $color3 */
+  color: #7a6c62;
+}
+
+hr {
+  /* $color3 */
+  background-color: #7a6c62;
+}
+
+#module-search fieldset,
+#zip-search .zip-inner,
+.monkForm div input,
+.monkForm div textarea,
+#searchForm fieldset,
+#searchForm2 fieldset {
+  /* $color3 */
+  background-color: rgba(122, 108, 98, 0.15);
+}
+
+.monkForm .section,
+.monkForm div.divider,
+#mobilenav .meganav-inner section.links ul ul,
+#header,
+#header .container,
+#nav .meganav-inner section.links > ul > li,
+#content #subnav,
+#content #subnav > li > a,
+#content #subnav > li > ul > li > ul ul,
+#footer,
+#footer .container {
+  /* $color3 */
+  border-color: #7a6c62;
+}
+
+#module-search fieldset,
+#zip-search .zip-inner,
+.monkForm div input,
+.monkForm div textarea,
+.monkForm .file input,
+#searchForm fieldset,
+#searchForm2 fieldset {
+  /* $color3 */
+  border-color: rgba(122, 108, 98, 0.2);
+}
+
+.widget.icon-buttons a {
+  /* $color3 */
+  border-color: rgba(122, 108, 98, 0.25);
+}
+
+/* Link 1 - Link Color
+================================================== */
+a,
+#sidebar .widget.events article h5,
+.widget.icon-buttons a:hover,
+.widget.sermons a:hover,
+.widget.section-sermons a:hover,
+.monkForm p.error,
+#event-control-bar h3,
+#event-control-bar .event-list-title,
+.calendar-month,
+.list-month-title,
+.calendar td > a,
+.list-event-prev,
+.list-event-next,
+.calendar-prev,
+.calendar-next,
+#event-control-bar h3 span,
+p.list-time-day,
+#ekkSermons_5_detail .meta span,
+#ekkSermons_5_detail .passage p,
+#ekkSermons_5_detail .passage h5,
+#ekkSermons_5_detail .sermon-right h4,
+.comments form label,
+.comment header cite,
+#welcome-scroll:hover,
+.widget.section-events article h5,
+#nav .meganav-inner section.links > ul > li > a,
+#nav .meganav-inner section.links > ul ul li a {
+  /* $link1 */
+  color: #155450;
+}
+
+.monkForm input[type=submit],
+#pagination #current,
+a.button-medium,
+p.button-medium a,
+a.button-large,
+p.button-large a {
+  /* $link1 */
+  background-color: #155450;
+}
+
+.featured-description:hover {
+  /* $link1 */
+  background-color: rgba(21, 84, 80, 0.9);
+}
+
+#ekkSermons_5_list article a.image-link:after {
+  /* $link1 */
+  border-color: #155450;
+}
+
+/* Link 2 - Link Alt Color
+================================================== */
+hr,
+#pagination #off {
+  /* $link2 */
+  color: #c1eb9f;
+}
+
+.div-callout,
+article.featured-article,
+article.featured-article .title,
+.results,
+.items article,
+.items article .meta,
+.list-weekday,
+.blogs article,
+.blogs article header,
+.blog-detail .meta,
+.comment header,
+.comment header .commenter-thumb {
+  /* $link2 */
+  border-color: #c1eb9f;
+}
+
+.rsvp,
+a.button-small,
+p.button-small a,
+.comments form textarea {
+  /* $link2 */
+  background-color: #c1eb9f;
+}
+
+/* Link 3 - Link Alt2 Color
+================================================== */
+.rsvp a,
+a.button-small,
+p.button-small a,
+.monkForm .asterisk,
+#mobilenav > li.active > a,
+#nav > li.current > a,
+#nav > li:hover > a,
+#nav .meganav-inner section.links > ul > li > a:hover,
+#nav .meganav-inner section.links > ul ul li a:hover {
+  /* $link3 */
+  color: #1e4a61;
+}
+
+a.button-medium:hover,
+p.button-medium a:hover,
+a.button-large:hover,
+p.button-large a:hover,
+.monkForm input[type=submit]:hover,
+.widget.icon-buttons a,
+.cycle-pager span.cycle-pager-active {
+  /* $link3 */
+  background-color: #1e4a61;
+}
+
+.widget.sermons .article-inner,
+.widget.section-sermons .article-inner {
+  /* $link3 */
+  background-color: rgba(30, 74, 97, 0.9);
+}
+
+#mobilenav .meganav-inner,
+#nav > li > ul:before,
+.cycle-pager span.cycle-pager-active {
+  /* $link3 */
+  border-color: #1e4a61;
+}
+
+/* Subnav 1 - Subnav Background
+================================================== */
+.monkForm,
+#content #subnav,
+#sidebar .widget.events article a,
+#mobilenav .meganav-inner,
+.items article.detail header,
+#content #event-nav,
+.comment header,
+.comment header .commenter-thumb,
+.content-section.two-cols .container,
+.widget.section-events article a,
+#nav > li > ul:before {
+  /* $subnav1 */
+  background-color: #f2f0e6;
+}
+
+#ekkSermons_5_list h4,
+#ekkSermons_5_detail .sermon-right h4 {
+  /* $subnav1 */
+  border-color: #f2f0e6;
+}
