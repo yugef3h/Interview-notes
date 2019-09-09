@@ -9,7 +9,7 @@ const cloneDeep1 = (target, hash = new WeakMap()) => {
   const cloneTarget = Array.isArray(target) ? [] : {};
   hash.set(target, cloneTarget);
 
-  // 针对Symbol属性
+  // 针对Symbol属性 Object.getOwnPropertySymbols(target)
   const symKeys = Object.getOwnPropertySymbols(target);
   if (symKeys.length) {
     symKeys.forEach(symKey => {
