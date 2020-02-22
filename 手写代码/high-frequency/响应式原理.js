@@ -108,5 +108,8 @@ const vue = new Vue({
   }
 })
 
-vue.mount()
+vue.mount() // in get
 vue._data.text = '123'
+
+// in watcher updata
+// in get
