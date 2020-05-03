@@ -1,3 +1,4 @@
+// node 的回调函数机制，利用 发布-订阅 模式
 function EventEmitter() {
   this.events = new Map();
 }
