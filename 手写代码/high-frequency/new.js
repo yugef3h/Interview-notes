@@ -2,7 +2,9 @@
 function n (ctor, ...args) {
   if (typeof ctor !== 'function') throw '!'
   let obj = Object.create(ctor.prototype)
-  let res = ctor.apply(obj, args) // 本质上就是执行函数获取返回值
+  // 考虑构造函数有返回值的情况
+  // function fn() {return {...}}
+  let res = ctor.apply(obj, args) // 本质上就是执行函数获取返回值，apply 用来添加新属性
   let isObject = typeof res === 'object' && res !== null
   let isFunction = typeof res === 'function'
   return isObject || isFunction ? res : obj  // 处理一个返回值
