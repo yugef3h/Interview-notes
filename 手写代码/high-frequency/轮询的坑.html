@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>看最后的总结QA！！</title>
+</head>
+<body>
+  <button id="button">暂停</button>
+  <script type="text/javascript">
+    // timerId 模拟计时器 id，唯一性
+    // timeObj 计时器存储器
+    let timerId = 1, isPlay = true, timeObj = {}
+    const button = document.querySelector('#button')
+    button.addEventListener('click', function() {
+      isPlay = !isPlay
+      if (isPlay) {
+        button.innerHTML = '暂停'
+        start()
+      } else {
+        button.innerHTML = '播放'
+        stop()
+      }
+    }, false)
+
+    start()
+    
+    function getData() {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve({ data: 'hello world!' })
+        }, 500)
+      })
+    }
+    // 轮询
+    function start() {
+      const id = timerId++
+      timeObj[id] = true
+      async function timerFn() {
+        if (!timeObj[id]) return;
+        const { data } = await getData() // 坑：要清除这里的定时器
+        console.log(data)
+        window.setTimeout(start, 1000)
+      }
+      timerFn()
+    }
+    function stop() {
+      timeObj = {}
+    }
+  </script>
+  <!-- 总结： -->
+  <!-- Q：timerObj 和 id 是起什么作用，为什么不直接用一个变量设置 true 和 false -->
+  <!-- A：这个问题提的很好，试想一下，如果我们快速点击执行 start()， stop()， start()，变量依次会变成true，false，true，假如第一步的start() 处于 const { data } = await getData() 或者 setTimeout(timerFn, 1000) 异步等待中，再快速点击执行第二步 stop()， 第三步 start()，目前变量为true，等第一步 start() 异步执行完成，判断变量为 true，会继续循环，第三步start()创建的timeFn()也会执行，页面中就会有两个轮询，如果加上id，定时器就是唯一的，只让最新的定时器可以继续执行（timerObj[id] = true），之前的再循环的时候，已被清空（timerObj = {}），会退出循环（if (!timerObj[id]) return） -->
+  <!-- 本体与防抖节流没有任何联系 -->
+  <!-- 参考文献：https://segmentfault.com/a/1190000014460305 -->
+</body>
+</html>

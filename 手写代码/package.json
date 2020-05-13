@@ -1,4 +1,7 @@
 {
+  "script": {
+    "dev": "--preserveConstEnums"
+  },
   "dependencies": {
     "ts-node": "^9.0.0"
   }
