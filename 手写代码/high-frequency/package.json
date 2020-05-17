@@ -1,0 +1,10 @@
+{
+  "name": "typescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "yuql",
+  "license": "MIT",
+  "dependencies": {
+    "reflect-metadata": "^0.1.13"
+  }
+}
