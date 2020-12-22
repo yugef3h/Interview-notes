@@ -1,8 +1,10 @@
 {
-  "script": {
-    "dev": "--preserveConstEnums"
-  },
+  "name": "typescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "yuql",
+  "license": "MIT",
   "dependencies": {
-    "ts-node": "^9.0.0"
+    "reflect-metadata": "^0.1.13"
   }
 }
