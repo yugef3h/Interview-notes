@@ -8,10 +8,6 @@ dist
 *.ts
 
 # leetcode
-easy
-hard
-medium
-test
 
 # Editor directories and files
 .idea

@@ -1,3 +1,4 @@
+// vue reactive.js 版更佳
 const Observer = function (data) {
   // for get/set
   for (let key in data) {
@@ -38,7 +39,7 @@ const Vue = function (options) {
   if (options && typeof options.data === 'function') {
     this._data = options.data.apply(this)
   }
-  // 挂载函数
+  // 挂载函数：mount 页面渲染完毕，在节点上绑定更新函数，添加监听数据的订阅者 watcher
   this.mount = function() {
     new Watcher(self, self.render)
   }
@@ -76,13 +77,14 @@ const Watcher = function(vm, fn) {
 
 const Dep = function() {
   const self = this
-  // 收集目标
-  this.target = null
+  // this.target = null
+  // 收集目标 bug 修正
+  Dep.target = null
   // 存储收集器中需要通知的 Watcher
   this.subs = []
   // 当有目标时，绑定 Dep 与 Watcher 的关系
   this.depend = function() {
-    if (Dep.target) {
+    if (Dep.target) { // 挂在 Dep 函数下的一个属性 target，用于挂在 watcher
       // 这里其实可以直接写成 self.addSub(Dep.target)
       // 没有这么写因为想还原源码的过程
       Dep.target.addDep(self)
@@ -94,6 +96,7 @@ const Dep = function() {
   }
   // 通知收集器中的所有 Watcher，调用其 update 方法
   this.notify = function() {
+    console.log(self.subs.length)
     for (let i=0; i<self.subs.length; i+=1) {
       self.subs[i].update()
     }

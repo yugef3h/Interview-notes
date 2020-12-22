@@ -71,8 +71,9 @@ const Watcher = function(vm, fn) {
 
 const Dep = function() {
   const self = this
-  // 收集目标
-  this.target = null
+  // 收集目标 bug 修正
+  // this.target = null
+  Dep.target = null
   // 存储收集器中需要通知的 Watcher
   this.subs = []
   // 当有目标时，绑定 Dep 与 Watcher 的关系
