@@ -1,7 +1,8 @@
 # 文档目录：
-- 面试笔记
-- 手写代码：js 基础原理
-- 算法基础：leetcode 代码总结
+- [面试笔记]()
+- [手写代码：js 基础原理](https://github.com/yugef3h/Interview-notes/tree/master/%E6%89%8B%E5%86%99%E4%BB%A3%E7%A0%81)
+- [算法基础：leetcode 代码总结](https://github.com/yugef3h/Interview-notes/tree/master/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80)
+- [性能优化](https://github.com/yugef3h/Interview-notes/tree/master/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%8F%8A%E6%96%B9%E5%90%91)
 
 
 # 业务思考随记
