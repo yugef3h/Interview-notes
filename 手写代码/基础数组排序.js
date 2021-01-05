@@ -24,7 +24,7 @@ function selectSort(arr) {
   return arr
 }
 
-// 插入排序: 即将元素插入到已排序好的数组中
+// 插入排序: 即将元素到已排序好的数组中
 function insertSort(arr) {
   for (let i=1; i<arr.length; i++) { // 从 1 开始，默认 0 为已排序
     for (let j=i; j>0; j--) {
