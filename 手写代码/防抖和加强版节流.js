@@ -11,7 +11,7 @@ const debounce = (fn, delay) => {
 
 // 加强版，无限防抖，固定频率触发
 const throttle = (fn, delay) => {
-  let timer = null, last = 0 // last = 0 表示首次执行
+  let timer = null, last = 0 // last = 0 表示首次立即执行
   return function(...args) {
     let now = +new Date()
     if (now - last < delay && timer) {
