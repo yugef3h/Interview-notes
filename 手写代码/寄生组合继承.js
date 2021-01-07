@@ -5,6 +5,9 @@ function Parent() {
 Parent.prototype.makeMoney = function() {
   console.log('+ 陪伴成长')
 }
+Parent.morningJog = function() {
+  console.log('晨跑中……')
+}
 function Child() {
   Parent.call(this)
   this.name = 'yuql'
