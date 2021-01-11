@@ -43,14 +43,14 @@ function lazyload() {
   let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;//滚动条卷去的高度
   for(let i = count; i <num; i++) {
     // 元素现在已经出现在视口中
-    if(img[i].offsetTop < scrollHeight + viewHeight) {
+    if(img[i].offsetTop < scrollTop + viewHeight) {
       if(img[i].getAttribute("src") !== "default.jpg") continue;
       img[i].src = img[i].getAttribute("data-src");
       count ++;
     }
   }
 }
-// throttle函数我们上节已经实现
+// throttle函数我们上节已经实现，这样写请问你怎么删……
 window.addEventListener('scroll', throttle(lazyload, 200));
 
 // 2

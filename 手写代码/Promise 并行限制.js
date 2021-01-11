@@ -1,7 +1,7 @@
 class Scheduler {
-  constructor() {
+  constructor(maxCount=2) {
     this.queue = [];
-    this.maxCount = 2;
+    this.maxCount = maxCount;
     this.runCounts = 0;
   }
   add(promiseCreator) {
@@ -41,6 +41,7 @@ addTask(500, '2');
 addTask(300, '3');
 addTask(400, '4');
 scheduler.taskStart()
+// 每次两个任务：500ms 先结束，第3个任务进来，300ms 先结束，第4个任务进来，1000ms 先结束
 // 2
 // 3
 // 1

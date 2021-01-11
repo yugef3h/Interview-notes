@@ -26,7 +26,8 @@ class Dep {
   }
 
   static popTarget() {
-    this.target = this.stack.pop()
+    let len = this.stack
+    this.target = len && this.stack.pop()
   }
 }
 
