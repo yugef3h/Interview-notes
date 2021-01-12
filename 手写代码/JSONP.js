@@ -13,7 +13,7 @@ const jsonp = ({url, params, callbackName}) => {
     return `${url}?${dataStr}`
   }
   return new Promise((resolve, reject) => {
-    callbackName = callbackName || Math.random().toString()
+    callbackName = callbackName || Math.random().toString().substr(2)
     let scriptEle = document.createElement('script')
     scriptEle.src = generateURL()
     document.body.appendChild(scriptEle)

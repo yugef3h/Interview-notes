@@ -7,7 +7,7 @@ function curry(func) {
       return func.apply(this, args)
     }
     return function (...args2) {
-      return curried.apply(this, args.concat(args2))
+      return curried.apply(this, args.concat(args2)) // 生成新的函数并调用，这里的新函数即 curried
     }
   }
 }
