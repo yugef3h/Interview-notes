@@ -1,3 +1,9 @@
+已收录：
+- [x] 字节跳动
+- [] 阿里巴巴
+- [] 腾讯
+
+
 easy：
 
 53. [尝试使用分治法](https://leetcode-cn.com/problems/maximum-subarray/solution/zui-da-zi-xu-he-by-leetcode-solution/)
