@@ -31,3 +31,7 @@ var minDepth = function(root) {
   }
   return level
 };
+
+
+
+// 思路不要偏，不要只想着单边少，判断一边有一边没有，不过有空可以尝试一下。
