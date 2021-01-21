@@ -19,7 +19,7 @@ var isSymmetric = function(root) {
     node1 = queue.shift()
     node2 = queue.shift()
     if (!node1 && !node2) continue // 也算对称，进行一轮 shift
-    if (!node1 || !node1 || node1.val !== node2.val) return false // 回归树的本质，比较 val 是否相等
+    if (!node1 || !node2 || node1.val !== node2.val) return false // 回归树的本质，比较 val 是否相等
     queue.push(node1.left)
     queue.push(node2.right) // 对称存储，外与外比较
     queue.push(node1.right)
