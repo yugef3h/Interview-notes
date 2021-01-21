@@ -11,6 +11,7 @@
  */
 
 /**
+ * 类似 fibonacci
  * @param {number} n
  * @return {number}
  */
