@@ -12,7 +12,7 @@ var isValid = function(s) {
     if (val === '(' || val === '{' || val === '[') {
       stack.push(val)
     }
-    if (!stack.length) return false
+    if (!stack.length) return false // 空判断
     if (val === ')' && stack.pop() !== '(') return false
     if (val === '}' && stack.pop() !== '{') return false
     if (val === ']' && stack.pop() !== '[') return false

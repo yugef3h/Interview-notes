@@ -10,14 +10,13 @@ var mergeTwoLists = function(l1, l2) {
   let p1 = l1, p2 = l2
   while (p1 && p2) {
     if (p1.val > p2.val) {
-      p.next = p2
-      p = p.next
+      p.next = p2 // 注意不是存值
       p2 = p2.next
     } else {
       p.next = p1
-      p = p.next
       p1 = p1.next
     }
+    p = p.next
   }
   if (p1) {
     p.next = p1
