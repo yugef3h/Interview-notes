@@ -30,7 +30,7 @@ const timeout = time => new Promise(resolve => {
 })
   
 const scheduler = new Scheduler();
-  
+
 const addTask = (time,order) => {
   scheduler.add(() => timeout(time).then(()=>console.log(order)))
 }
