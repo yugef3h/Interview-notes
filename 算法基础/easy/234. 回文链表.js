@@ -7,7 +7,7 @@
  * 进阶: 你能否用 O(n) 时间复杂度和 O(1) 空间复杂度解决此题
  */
 
-// PS：这个就是进阶答案，emmm……
+// PS：这个就是进阶答案，记得还原链表
 var isPalindrome = function(head) {
   // 反序列化
   let reverse = function(pre, cur) {
@@ -30,5 +30,7 @@ var isPalindrome = function(head) {
   for (let p1=head, p2=newStart; p2!==null; p1=p1.next, p2=p2.next) {
     if (p1.val !== p2.val) return false
   }
+  // 缺少一个还原链表的步骤
+  // 待补充
   return true
 }
