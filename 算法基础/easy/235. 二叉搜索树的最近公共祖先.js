@@ -8,6 +8,7 @@ var lowestCommonAncestor = function(root, p, q) {
   let node = root
   // 二叉搜索树的特性本身就是这样，所以简单
   while(node) {
+    // 比如 p = 3、 q = 5，而 root.val=6，大于 p 和 q，那么缩小范围，去 root.left 继续比较
     if (node.val > p.val && node.val > q.val) {
       node = node.left
     } else if (node.val < p.val && node.val < q.val) {
