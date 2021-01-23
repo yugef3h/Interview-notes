@@ -5,17 +5,32 @@
 输入: nums = [1,3,-1,-3,5,3,6,7], 和 k = 3
 输出: [3,3,5,5,6,7] 
  */
+// 解题思路：单调队列从高到低，首位只存最大值
 var maxSlidingWindow = function(nums, k) {
-  let queue = [], res = []
-  for (let i=0; i<nums.lengthl; i++) {
-    if (i-queue[0] >= k) queue.shift() // 超过3就要删除队列首部
-    // 小于当前则删除队列尾部，始终保持单调队列
-    while (nums[queue[queue.length-1]] <= nums[i]) {
-      queue.pop()
-    }
-    queue.push(i)
-    // k=3，所以 i 至少要等于 2，才能保证满足一个窗口范围
-    if (i>=k-1) res.push(nums[queue[0]])
+  let queue = [] // 存下标，不一定满足长度为 k！
+  let res = []
+  for (let i=0; i<nums.length; i++) {
+      if (i - queue[0] >= k) queue.shift() // 假如超过 k 长度就删除首位
+      while(nums[queue[queue.length-1]] <= nums[i]) { // 将 queue 的最后一位与当前值比较，小则剔除，始终保持单调队列
+          queue.pop()
+      }
+      queue.push(i) // 存下标
+      if (i >= k-1) res.push(nums[queue[0]]) // i 大于等于 k-1 就可以填进数组了
+  }
+  return res
+};
+// 方法2会超时
+
+var maxSlidingWindow = function(nums, k) {
+  let len = nums.length
+  if (len === 0) return []
+  let res = []
+  for (let i=0; i<len-k+1; i++) {
+      let max = Number.MIN_SAFE_INTEGER
+      for (let j=i; j<i+k; j++) {
+          max = Math.max(max, nums[j])
+      }
+      res.push(max)
   }
   return res
 };
