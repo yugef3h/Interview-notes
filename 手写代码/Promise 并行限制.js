@@ -17,7 +17,7 @@ class Scheduler {
       return;
     }
     this.runCounts++;
-
+    // promise 直接执行
     this.queue.shift()().then(() => {
       this.runCounts--;
       this.request();
