@@ -99,3 +99,21 @@ for (let k = 0; k < res.length; k++) {
 console.log(cur.filter((item) => item.indexOf("南") !== -1));
 
 // 封装下，假如有多级 label 和 children 呢
+// 启发 for / let j = 0 / while
+var longestCommonPrefix = function(strs) {
+  if (!strs.length) return ''
+  let res = strs[0]
+  for (let i=1; i<strs.length; i++) {
+    let cur = strs[i]
+    let j = 0
+    while (j < res.length) {
+      if (res[j] === cur[j]) {
+        j++
+      } else {
+        res = res.slice(0, j)
+        if (res === '') return res
+      }
+    }
+  }
+  return res
+}
