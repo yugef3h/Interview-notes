@@ -19,7 +19,28 @@ var maxSlidingWindow = function(nums, k) {
   }
   return res
 };
-// 方法2会超时
+
+// 原版备注
+var maxSlidingWindow = function(nums, k) {
+  let window = [] // 双端队列存 nums 的下标
+  let res = []
+  // init
+  if (nums.length === 0 || !k) return []
+  for (let i=0; i<nums.length; i++) {
+      // 删除窗口外的，排除刚开始 window 不足 k的值且从 i-k = 0 开始 shift
+      if (window[0] !== undefined && window[0] <= i - k) window.shift() 
+      // while 循环处理掉小于当前nums[i]值都删掉，始终保持window[0]队首是最大值的下标
+      while (nums[window[window.length-1]] <= nums[i]) window.pop()
+      // push 当前下标到 window
+      window.push(i)
+      // res.push i = 2之后的window[0] 结果
+      if (i >= k - 1) res.push(nums[window[0]])
+  }
+  return res
+};
+
+
+// 方法3会超时
 
 var maxSlidingWindow = function(nums, k) {
   let len = nums.length
