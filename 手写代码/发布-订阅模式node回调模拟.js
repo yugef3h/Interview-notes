@@ -23,6 +23,7 @@ EventEmitter.prototype.removeListener = function (type, listener) {
   if (!Array.isArray(handler)) {
     if (handler.callback === listener.callback) this.events.delete(type);
     else return;
+    // return;
   }
   for (let i = 0; i < handler.length; i++) {
     let item = handler[i];
