@@ -24,7 +24,7 @@ var stoneGame = function(piles) {
     dp[k][k] = piles[k]
   }
   for (let end=1; end<len; end++) {
-    for (let i=0, j=end; j<end; i++, j++) {
+    for (let i=0, j=end; j<len; i++, j++) {
       dp[i][j] = Math.max(piles[i] - dp[i+1][j], piles[j]-dp[i][j-1])
     }
   }
