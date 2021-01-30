@@ -1,3 +1,6 @@
+/**
+ * JS实现一个带并发控制的异步调度器，保证同时运动的任务最多有两个，完善下面代码
+ */
 class Scheduler {
   constructor(maxCount=2) {
     this.queue = [];
@@ -46,3 +49,42 @@ scheduler.taskStart()
 // 3
 // 1
 // 4
+
+
+// 实现2
+class Scheduler {  
+  constructor (limit = 2) {    
+    this.limit = limit    
+    this.concurrent = 0    
+    this.stack = []  
+  }
+  add (promiseCreator) {    
+    if (this.concurrent < this.limit) {      
+      this.concurrent++      
+      return promiseCreator().then(() => {        
+        this.concurrent--        
+        this.next()      
+      })    
+    } else {      
+      let resolve      
+      let p = new Promise(r => {        
+        resolve = r      
+      })      
+      this.stack.push(() => {        
+        promiseCreator().then(() => {          
+          resolve()          
+          this.concurrent--          
+          this.next()        
+        })      
+      })      
+      return p    
+    }  
+  }  
+  next () {    
+    if (this.stack.length > 0 && this.concurrent < this.limit) {      
+      let p = this.stack.shift()      
+      this.concurrent++      
+      p()    
+    }  
+  }
+}
