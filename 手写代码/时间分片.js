@@ -9,7 +9,7 @@ function timeSlicing (gen) {
   if (typeof gen === 'function') gen = gen()
   if (!gen || typeof gen.next !== 'function') return
   return function next() {
-    const start = performance.now() // 需要基于网页的更精确的时间戳
+    const start = performance.now() // 需要基于网页的更精确的时间戳，又叫高精度时间，返回页面浏览上下文第一次被创建的时间，不受时钟偏差与系统时钟调整的影响（即手动更改系统时间不会影响该值），试试 new Date(performance.timeOrigin).toLocaleString()
     let res = null
     do {
       res = gen.next()
