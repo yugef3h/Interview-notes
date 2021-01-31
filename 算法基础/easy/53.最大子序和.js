@@ -19,7 +19,7 @@ var maxSubArray = function(nums) {
   if (nums.length === 1) return nums[0]
   let init = cache = nums[0]
   for (let i=1; i<nums.length; i++) {
-    if (init + nums[i] > init) {
+    if (init + nums[i] > nums[i]) { // 注意是与 nums[i] 比较，若怎么加都没 nums[i] 大，不如不加直接取 nums[i]
       init = init + nums[i]
     } else {
       init = nums[i]
