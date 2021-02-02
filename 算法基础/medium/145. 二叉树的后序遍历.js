@@ -22,3 +22,16 @@ var postorderTraversal = function(root) {
   }
   return res
 };
+
+
+var traversal = (root) => {
+    let res = []
+    let postOrder = (root) => {
+        if (!root) return []
+        if (root.left) postOrder(root.left)
+        if (root.right) postOrder(root.right)
+        res.push(root.val)
+    }
+    postOrder(root)
+    return res
+}

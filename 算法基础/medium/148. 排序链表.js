@@ -4,8 +4,7 @@
  * 输出：-1->0->3->4->5
  */
 var sortList = function(head) {
-
-};if (!head || head.next === null) return head
+    if (!head || head.next === null) return head
     let slow = head, fast = head.next
     while (fast !== null && fast.next !== null) { // fast 比 slow 更快，只要判断 fast
         slow = slow.next
@@ -29,3 +28,4 @@ var sortList = function(head) {
     }
     h.next = left !== null ? left : right
     return res.next
+}

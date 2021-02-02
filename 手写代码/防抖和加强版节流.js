@@ -10,11 +10,12 @@ const debounce = (fn, delay) => {
 }
 
 // 加强版，无限防抖，固定频率触发
+
 const throttle = (fn, delay) => {
   let timer = null, last = 0 // last = 0 表示首次立即执行
   return function(...args) {
     let now = +new Date()
-    if (now - last < delay && timer) {
+    if (now - last < delay && timer) { // 这里梳理下，怎么进来？
       clearTimeout(timer)
       timer = setTimeout(() => {
         fn.apply(this, args)
@@ -26,7 +27,7 @@ const throttle = (fn, delay) => {
   }
 }
 
-// 立即执行加强版
+// 立即执行加强版，待补充
 
 const fn = () => {
   console.log(2)
