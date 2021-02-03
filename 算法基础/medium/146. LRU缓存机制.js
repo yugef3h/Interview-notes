@@ -28,6 +28,6 @@ LRUCache.prototype.put = function(key, val) {
   }
   this.map.set(key, val)
   if (this.map.size > this.max) {
-    this.map.delete(this.map.keys().next().val)
+    this.map.delete(this.map.keys().next().value)
   }
 }
