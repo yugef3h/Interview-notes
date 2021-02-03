@@ -1,9 +1,9 @@
 // 冒泡
 function bubbleSort(arr) {
   let len = arr.length
-  for (let i=len; i>= 2; i--) { // 排完第 2 个，第一个自动为最小
-    for (let j=0; j<i-1; j++) { // 每轮排好，后面的都就绪，自然要缩小范围，只排前面
-      if (arr[j] > arr[j+1]) {
+  for (let i=len-1; i>1; i--) { // 排完第 2 个，第一个自动为最小
+    for (let j=0; j<i; j++) { // 每轮排好，后面的都就绪，自然要缩小范围，只排前面
+      if (arr[j] > arr[j+1]) { // 这里的 j+1 最大刚好到 i
         [arr[j], arr[j+1]] = [arr[j+1], arr[j]]
       }
     }
@@ -28,7 +28,7 @@ function selectSort(arr) {
 function insertSort(arr) {
   for (let i=1; i<arr.length; i++) { // 从 1 开始，默认 0 为已排序
     for (let j=i; j>0; j--) {
-      if (arr[j] < arr[j-1]) {
+      if (arr[j] < arr[j-1]) { // j-1 最小为 0，关联 j>0
         [arr[j],arr[j-1]] = [arr[j-1],arr[j]]
       } else {
         break;

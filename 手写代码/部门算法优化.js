@@ -6,7 +6,7 @@ function convert(list) {
       res.push(item)
       continue
     }
-    if (item.parentId in map) {
+    if (item.parentId in map) { // 这一句是精髓！
       const parent = map[item.parentId]
       parent.children = parent.children || []
       parent.children.push(item)
