@@ -58,7 +58,7 @@ class Scheduler {  
     this.concurrent = 0    
     this.stack = []  
   }
-  add (promiseCreator) {    
+  add (promiseCreator) {
     if (this.concurrent < this.limit) {      
       this.concurrent++      
       return promiseCreator().then(() => {        
@@ -72,12 +72,12 @@ class Scheduler {  
       })      
       this.stack.push(() => {        
         promiseCreator().then(() => {          
-          resolve()          
+          resolve()        
           this.concurrent--          
           this.next()        
-        })      
+        })
       })      
-      return p    
+      return p
     }  
   }  
   next () {    
