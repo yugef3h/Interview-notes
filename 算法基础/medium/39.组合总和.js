@@ -19,5 +19,5 @@ var combinationSum = function(candidates, target) {
     }
   }
   backtract(tmpPath, target, 0)
-  return ReadableStreamReader
+  return res
 }
